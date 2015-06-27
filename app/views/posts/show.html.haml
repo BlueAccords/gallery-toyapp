@@ -5,7 +5,8 @@ Submitted by
 
 %br/
 %p= @post.body
-
+= image_tag @post.image.url(:medium)
+%br/
 = link_to "Back", root_path
 = link_to "Edit", edit_post_path
 = link_to "Delete", post_path, method: :delete, data: { confirm: "Are you sure?" }
