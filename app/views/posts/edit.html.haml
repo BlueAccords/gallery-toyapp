@@ -1,5 +1,10 @@
 .col-md-6.col-md-offset-3
-
-	%h1 Edit Post
-	= image_tag @post.image.url(:medium)
-	= render 'form'
+	.row
+		.panel.panel-default
+			.panel-heading
+				%h1 Edit Post
+			.panel-body
+				%strong.center Current Image
+				%br/
+				= image_tag @post.image.url(:medium)
+				= render 'form'
