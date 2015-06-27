@@ -1,12 +1,20 @@
-%h1= @post.title
-%p 
-Submitted by 
-= @post.user.email
-
-%br/
-%p= @post.body
-= image_tag @post.image.url(:medium)
-%br/
-= link_to "Back", root_path
-= link_to "Edit", edit_post_path
-= link_to "Delete", post_path, method: :delete, data: { confirm: "Are you sure?" }
+#post_show.row
+	.col-md-8.col-md-offset-2
+		.panel.panel-default
+			.panel-heading.post_image
+				= image_tag @post.image.url
+			.panel-body
+				%h1= @post.title
+				%p.description= @post.body
+				Submitted by 
+				= @post.user.email
+			.panel-footer
+				.row
+					.col-md-6
+						%p.user
+						Submitted by
+						= @post.user.email
+					.col-md-6
+						.btn-group.pull-right
+							= link_to "Edit", edit_post_path, class: "btn btn-default"
+							= link_to "Delete", post_path, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-default"
